@@ -4,11 +4,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
-    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6688/6688580.png">
+    <title>Rock, Paper, Scissors</title>
 </head>
-<body>
-    
-</body>
+
+<body id="body">
+    <div id="fullScreenMenuContainer">
+        <div class="fullScreenMenu">
+            <p class="startTitle">Are You Ready To Fight?</p>
+            <button id="startBtn">START</button>
+        </div>
+    </div> 
+
+    <div id="fullScreenWeaponContainer">
+        <div class="fullScreenWeapon">
+            <div class="row2">
+                <img id="playerAttack" src="">
+                <p class="weaponScreenTitle">VS</p>
+                <img id="cpuAttack" src="">
+            </div>
+            <div class="row3">
+                <p id="playerChoice">Rock</p>
+                <button onclick="fightBtn()" id="continueBtn">FIGHT</button>
+                <p id="cpuChoice">Paper</p>
+            </div>    
+        </div>
+    </div> 
+
+    <div id="fullScreenHitContainer">
+        <div class="fullScreenHit">
+            <p class="hitScreenTitle" id="hitScreenTitle">Nice! You landed a hit!</p>
+            <img id="hitImg" src="">
+            <button onclick="nextBtn()" id="nextBtn">Next Attack</button>
+        </div>
+    </div> 
+
+    <div id="fullScreenWinnerContainer">
+        <div class="fullScreenWinner">
+            <p class="winnerScreenTitle" id="winnerScreenTitle"></p>
+            <img id="winnerImg" src="">
+            <button onclick="restartBtn()" id="restartBtn">PLAY AGAIN</button>
+        </div>
+    </div> 
+
+
+    <div class="container" id="container"> <!--Main screen interface-->     
+            <div class="header" id="header">
+                <div class="bg-music">
+                    <audio id="bg-music" src="resources/music.mp3" loop></audio>
+                    <button class="btn-music" id="audioBtn"><img src="https://cdn-icons-png.flaticon.com/512/26/26762.png" alt="music play button"></button>
+                </div>
+                <h1 class="title">Welcome to Rock, Paper, Scissors!</h1>
+            </div>
+                
+        <div class="wrapper" id="wrapper">
+            <div class="rules">
+                <p>The rules are simple</p>
+                <ol class="list">
+                    <li>Pick an attack from the three choices below</li>
+                    <li>Rock beats Scissors, Scissors beats Paper, Paper beats Rock</li>
+                    <li>First to 5 successful hits wins!</li>
+                </ol>
+            </div>
+
+            <div class="score">
+                <p>The score is currently:</p>
+                <div class="counts">
+                    <p>You: <a id="playerScore">0</a></p>
+                    <p>Computer: <a id="cpuScore">0</a></p>
+                </div>
+            </div>
+
+            <p class="select">Select your attack!</p>
+            <div class="weapon">
+                <button class="weaponBtn">ROCK<img id="ROCK" src="https://cdn-icons-png.flaticon.com/512/1213/1213184.png" /></button>
+                <button class="weaponBtn">PAPER<img id="PAPER" src="https://cdn-icons-png.flaticon.com/512/4334/4334404.png" /></button>
+                <button class="weaponBtn">SCISSORS<img id="SCISSORS" src="https://www.clipartmax.com/png/full/208-2084325_pixel-scissors-icon.png" /></button>   
+            </div>
+        </div>
+
+        <div class="footer" id="footer">
+            <p>Copyright @ TheDawg101 2022</p> 
+        </div>
+    </div>  
 </html>
 
+<!-- Images and animations
+    Rock fight: https://i.pinimg.com/originals/fd/0c/35/fd0c350027c229eb7f77a17e73cc8df8.gif
+    Paper fight: https://3.bp.blogspot.com/-fQ4cP21jQZ0/WI3gsaIhRSI/AAAAAAAADyg/o-kv0NswJbwvkLp_4jxRkcZ8984UYF9MQCEw/s1600/konann.gif
+    Scissor fight: https://pa1.narvii.com/6258/c192bf12124cbd7f965ec756e508bcb6aef50dff_hq.gif
+
+    
+-->

@@ -1,0 +1,353 @@
+/*main screen ui*/
+
+body {
+    font-family: 'ArcadeClassic', sans-serif;
+    background-image: url("http://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-40.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0%;
+    cursor: default;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+}
+
+.btn-music {
+    border-radius: 50%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    cursor: pointer;
+    margin: 8px;
+    margin-bottom: -100px;
+}
+
+.btn-music:hover {
+    box-shadow: 0 0 25px white;
+}
+
+.btn-music > img {
+    height: 50px;
+    width: 50px;
+}
+
+.title {
+    font-size: 50px;
+    width: 90%;
+    text-decoration: underline;
+    color: white;
+    text-shadow: rgb(255, 38, 0) 1px 0 10px;
+    text-align: center;
+    align-self: center;
+    margin-top: 36px;
+    margin-bottom: 18px;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://i.pinimg.com/originals/e1/b5/c1/e1b5c1c25350f22c4b51350868504b58.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 40%;
+    min-width: 700px;
+    text-shadow: rgb(129, 129, 129) 1px 0 10px;
+    margin-bottom: 25px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+
+.wrapper.fadeIn {
+    opacity: 1;
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rules > p {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 90px;
+    margin-bottom: 0px;
+}
+
+ol {
+    font-size: 20px;
+}
+
+.score > p {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 8px;
+}
+
+.counts {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 30px;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.select {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0px;
+    margin-top: 24px;
+}
+
+.weapon {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 25px;
+    padding-top: 8px;
+}
+
+.weaponBtn{
+    width: 175px;
+    height: 175px;
+    font-size: 0;
+    background-color: white;
+    border-radius: 20px;
+    border: 5px solid black;
+    cursor: pointer;
+    opacity: 0.8;
+    margin-bottom: 50px;
+}
+
+.weaponBtn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    animation: effects 0.3s infinite;
+    box-shadow: 0 0 35px red;
+}
+@keyframes effects {
+    0%{
+        transform: translate(0px, 0px) rotate(0deg) scale(1.1);
+    }
+    25%{
+        transform: translate(1px, 1px) rotate(1deg) scale(1.1);
+    }
+    50%{
+        transform: translate(-1px, -1px) rotate(-1deg) scale(1.1);
+    }
+    75%{
+        transform: translate(2px, -1px) rotate(2deg) scale(1.1);
+    }
+    100%{
+        transform: translate(-1px, 1px) rotate(-1deg) scale(1.1);
+    }
+}
+
+
+img {
+    width: 150px;
+    height: auto;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    width: 100%;
+    margin-top: auto;
+}
+
+/*start screen*/
+
+#fullScreenMenuContainer {
+    position: fixed;
+    background: #111;
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .fullScreenMenu {
+    display: grid;
+    grid-row-gap: 15px;
+  }
+  
+  .fullScreenMenu button {
+    font-size: 30px;
+    opacity: .4;
+    transition: .2s;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .fullScreenMenu button:hover {
+    opacity: 1;
+    border-bottom: 2px solid #fff;
+    transition: .2s;
+    cursor: pointer;
+  }
+  
+  .startTitle {
+    font-size: 50px;
+    color: red;
+    font-weight: bold;
+  }
+
+/*weapon pick screen*/
+
+#fullScreenWeaponContainer {
+    position: fixed;
+    background: #111;
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .fullScreenWeapon {
+    display: grid;
+    grid-row-gap: 15px;
+  }
+  
+  .fullScreenWeapon button {
+    font-size: 30px;
+    opacity: .4;
+    transition: .2s;
+    border-bottom: 2px solid transparent;
+    width: 200px;
+  }
+  
+  .fullScreenWeapon button:hover {
+    opacity: 1;
+    border-bottom: 2px solid #fff;
+    transition: .2s;
+    cursor: pointer;
+  }
+  
+  .weaponScreenTitle {
+    font-size: 50px;
+    color: red;
+    font-weight: bold;
+    justify-self: center;
+  }
+
+  /*Hit screen*/
+
+#fullScreenHitContainer {
+    position: fixed;
+    background: #111;
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .fullScreenHit {
+    display: grid;
+    grid-row-gap: 15px;
+  }
+  
+  .fullScreenHit button {
+    font-size: 30px;
+    opacity: .4;
+    transition: .2s;
+    border-bottom: 2px solid transparent;
+    justify-self: center;
+    width: 200px;
+  }
+  
+  .fullScreenHit button:hover {
+    opacity: 1;
+    border-bottom: 2px solid #fff;
+    transition: .2s;
+    cursor: pointer;
+  }
+  
+  .hitScreenTitle {
+    font-size: 50px;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 8px;
+    justify-self: center;
+  }
+
+  #hitImg {
+    width: auto;
+    justify-self: center;
+    height: 500px;
+}
+
+  /*Winner screen*/
+
+#fullScreenWinnerContainer {
+    position: fixed;
+    background: #111;
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .fullScreenWinner {
+    display: grid;
+    grid-row-gap: 15px;
+  }
+  
+  .fullScreenWinner button {
+    font-size: 30px;
+    opacity: .4;
+    transition: .2s;
+    border-bottom: 2px solid transparent;
+    justify-self: center;
+    width: 200px;
+  }
+  
+  .fullScreenWinner button:hover {
+    opacity: 1;
+    border-bottom: 2px solid #fff;
+    transition: .2s;
+    cursor: pointer;
+  }
+  
+  .winnerScreenTitle {
+    font-size: 50px;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 8px;
+    justify-self: center;
+  }
+
+  #winnerImg {
+    width: 500px;
+    justify-self: center;
+    height: auto;
+}
+  

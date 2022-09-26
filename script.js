@@ -38,30 +38,30 @@ function getComputerChoice() {
 function checkWinner() {
     if(playerChoice === cpuChoice) {
         document.getElementById("hitScreenTitle").textContent = "You Were Evenly Matched";
-        document.getElementById("hitImg").src="https://i.makeagif.com/media/3-03-2017/mC3oVm.gif";
+        document.getElementById("hitImg").src="resources/tie.gif";
     } else if (playerChoice === "ROCK" && cpuChoice === "SCISSORS") {
         document.getElementById("hitScreenTitle").textContent = "What a hit! Those Scissors Are No Match!";
-        document.getElementById("hitImg").src="https://i.makeagif.com/media/9-19-2022/AoLsN7.gif";
+        document.getElementById("hitImg").src="resources/rock-win.gif";
         playerScore += 1;
     } else if (playerChoice === "ROCK" && cpuChoice === "PAPER") {
         document.getElementById("hitScreenTitle").textContent = "Oh No! You Got Trapped By Paper!";
-        document.getElementById("hitImg").src="https://comicvine.gamespot.com/a/uploads/original/11138/111388963/6957829-konan%20powers.gif";
+        document.getElementById("hitImg").src="resources/paper-win.gif";
         computerScore += 1;
     } else if (playerChoice === "PAPER" && cpuChoice === "ROCK") {
         document.getElementById("hitScreenTitle").textContent = "Well Played! You Trapped The Enemy!";
-        document.getElementById("hitImg").src="https://comicvine.gamespot.com/a/uploads/original/11138/111388963/6957829-konan%20powers.gif";
+        document.getElementById("hitImg").src="resources/paper-win.gif";
         playerScore += 1;
     } else if (playerChoice === "PAPER" && cpuChoice === "SCISSORS") {
         document.getElementById("hitScreenTitle").textContent = "Ouch! You Got Sliced By Scissors!";
-        document.getElementById("hitImg").src="https://static.wikia.nocookie.net/animevice/images/6/61/Sheele_using_Extase_defensively.gif/revision/latest/scale-to-width-down/400?cb=20160305023421";
+        document.getElementById("hitImg").src="resources/scissors-win.gif";
         computerScore += 1;
     } else if (playerChoice === "SCISSORS" && cpuChoice === "PAPER") {
         document.getElementById("hitScreenTitle").textContent = "Like A Hot Knife Through Butter! What A Move!";
-        document.getElementById("hitImg").src="https://static.wikia.nocookie.net/animevice/images/6/61/Sheele_using_Extase_defensively.gif/revision/latest/scale-to-width-down/400?cb=20160305023421";
+        document.getElementById("hitImg").src="resources/scissors-win.gif";
         playerScore += 1;
     } else if (playerChoice === "SCISSORS" && cpuChoice === "ROCK") {
         document.getElementById("hitScreenTitle").textContent = "You Brought Scissors To A Rock Fight... Bad Play!";
-        document.getElementById("hitImg").src="https://i.makeagif.com/media/9-19-2022/AoLsN7.gif";
+        document.getElementById("hitImg").src="resources/rock-win.gif";
         computerScore += 1;
     }
 }
@@ -111,7 +111,7 @@ document.getElementById("hitImg").src=""; //reset gif to begining
         document.getElementById("fullScreenHitContainer").style.display = 'none';
         document.getElementById("fullScreenWinnerContainer").style.display = 'grid';
         document.getElementById("winnerScreenTitle").textContent = "Congratulations! You have defeated the Computer!";
-        document.getElementById("winnerImg").src="https://i.pinimg.com/originals/0a/2d/95/0a2d9547dbdd655b6af54218dbd73b3b.gif";
+        document.getElementById("winnerImg").src="resources/player-win.gif";
         playerScore = 0;
         computerScore = 0;
         updateScore();
@@ -119,7 +119,7 @@ document.getElementById("hitImg").src=""; //reset gif to begining
         document.getElementById("fullScreenHitContainer").style.display = 'none';
         document.getElementById("fullScreenWinnerContainer").style.display = 'grid';
         document.getElementById("winnerScreenTitle").textContent = "Oh... You were defeated and all is lost...";
-        document.getElementById("winnerImg").src="https://c.tenor.com/mClW4CbYFLsAAAAM/lol-get-shit-on-kid-loser.gif";
+        document.getElementById("winnerImg").src="resources/cpu-win.gif";
         playerScore = 0;
         computerScore = 0;
         updateScore();

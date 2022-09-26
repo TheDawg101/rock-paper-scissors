@@ -2,7 +2,7 @@
 
 body {
     font-family: 'ArcadeClassic', sans-serif;
-    background-image: url("http://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-40.gif");
+    background-image: url("resources/main-bg.gif");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

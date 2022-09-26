@@ -8,7 +8,6 @@ window.onload=function() {
     document.getElementById("startBtn").addEventListener("click", function() {
         document.getElementById("fullScreenMenuContainer").style.display = 'none';
         document.getElementById("body").style.overflow = 'visible';
-        audioFile.play();
         //fades in wrapper after 2s
         setTimeout(function(){
             let wrapper = document.getElementById('wrapper');
@@ -38,29 +37,36 @@ function getComputerChoice() {
 function checkWinner() {
     if(playerChoice === cpuChoice) {
         document.getElementById("hitScreenTitle").textContent = "You Were Evenly Matched";
+        document.getElementById("hitScreenTitle").style.color= 'white';  
         document.getElementById("hitImg").src="resources/tie.gif";
     } else if (playerChoice === "ROCK" && cpuChoice === "SCISSORS") {
         document.getElementById("hitScreenTitle").textContent = "What a hit! Those Scissors Are No Match!";
+        document.getElementById("hitScreenTitle").style.color= 'green';  
         document.getElementById("hitImg").src="resources/rock-win.gif";
         playerScore += 1;
     } else if (playerChoice === "ROCK" && cpuChoice === "PAPER") {
         document.getElementById("hitScreenTitle").textContent = "Oh No! You Got Trapped By Paper!";
+        document.getElementById("hitScreenTitle").style.color= 'red'; 
         document.getElementById("hitImg").src="resources/paper-win.gif";
         computerScore += 1;
     } else if (playerChoice === "PAPER" && cpuChoice === "ROCK") {
         document.getElementById("hitScreenTitle").textContent = "Well Played! You Trapped The Enemy!";
+        document.getElementById("hitScreenTitle").style.color= 'green'; 
         document.getElementById("hitImg").src="resources/paper-win.gif";
         playerScore += 1;
     } else if (playerChoice === "PAPER" && cpuChoice === "SCISSORS") {
         document.getElementById("hitScreenTitle").textContent = "Ouch! You Got Sliced By Scissors!";
+        document.getElementById("hitScreenTitle").style.color= 'red'; 
         document.getElementById("hitImg").src="resources/scissors-win.gif";
         computerScore += 1;
     } else if (playerChoice === "SCISSORS" && cpuChoice === "PAPER") {
         document.getElementById("hitScreenTitle").textContent = "Like A Hot Knife Through Butter! What A Move!";
+        document.getElementById("hitScreenTitle").style.color= 'green'; 
         document.getElementById("hitImg").src="resources/scissors-win.gif";
         playerScore += 1;
     } else if (playerChoice === "SCISSORS" && cpuChoice === "ROCK") {
         document.getElementById("hitScreenTitle").textContent = "You Brought Scissors To A Rock Fight... Bad Play!";
+        document.getElementById("hitScreenTitle").style.color= 'red'; 
         document.getElementById("hitImg").src="resources/rock-win.gif";
         computerScore += 1;
     }
@@ -133,6 +139,7 @@ document.getElementById("winnerImg").src="";
         document.getElementById("fullScreenHitContainer").style.display = 'none';
         document.getElementById("fullScreenWinnerContainer").style.display = 'grid';
         document.getElementById("winnerScreenTitle").textContent = "Congratulations! You have defeated the Computer!";
+        document.getElementById("winnerScreenTitle").style.color= 'green'; 
         document.getElementById("winnerImg").src="resources/player-win.gif";
         playerScore = 0;
         computerScore = 0;
@@ -141,6 +148,7 @@ document.getElementById("winnerImg").src="";
         document.getElementById("fullScreenHitContainer").style.display = 'none';
         document.getElementById("fullScreenWinnerContainer").style.display = 'grid';
         document.getElementById("winnerScreenTitle").textContent = "Oh... You were defeated and all is lost...";
+        document.getElementById("winnerScreenTitle").style.color= 'red'; 
         document.getElementById("winnerImg").src="resources/cpu-win.gif";
         playerScore = 0;
         computerScore = 0;
@@ -165,13 +173,15 @@ function restartBtn() {
 let audioFile = new Audio("resources/music.mp3");
 
 document.getElementById("audioBtn").addEventListener("click", function() {
-    audioBtn.classList.toggle('paused');
 
-    if (audioBtn.classList.contains('paused')) {
+    if (audioBtn.classList.contains('play')) {
         audioFile.pause();
+        audioBtn.classList.toggle('play');
     } else {
         audioFile.play();
+        audioBtn.classList.toggle('play');
     }
+
 });
 
 
